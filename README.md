@@ -48,3 +48,4 @@ Threads manage client connections, with synchronization mechanisms in place to a
 
 ### Game Analysis
 - **Difficulty Assessment**: After each game, the server analyzes which questions were answered incorrectly most often, identifying them as the most difficult questions for that session. This analysis helps in adjusting the difficulty level and improving the question set for future games.
+
