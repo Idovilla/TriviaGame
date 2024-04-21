@@ -17,7 +17,8 @@ This Trivia Game is a networked quiz game centered around military themes, imple
 - **TCP Connections**: Once clients respond to the UDP broadcast, a TCP connection is established for each client to handle the game's interactive session securely and reliably.
 
 ### Multithreading
-**Thread Per Client**: Each client connection is managed by a dedicated thread. This design ensures that client-specific tasks such as receiving answers, timing responses, and sending questions are handled independently, thus avoiding any performance bottlenecks that would arise from a single-threaded server architecture.
+
+- **Thread Per Client**: Each client connection is managed by a dedicated thread. This design ensures that client-specific tasks such as receiving answers, timing responses, and sending questions are handled independently, thus avoiding any performance bottlenecks that would arise from a single-threaded server architecture.
   
 - **Concurrency Control**: To manage the complexities introduced by multiple threads, the server implements synchronization mechanisms. These include locks and thread-safe data structures to prevent race conditions, especially when accessing shared resources like game state information and player scores.
 
