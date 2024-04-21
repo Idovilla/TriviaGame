@@ -50,3 +50,44 @@ Threads manage client connections, with synchronization mechanisms in place to a
 ### Game Analysis
 - **Difficulty Assessment**: After each game, the server analyzes which questions were answered incorrectly most often, identifying them as the most difficult questions for that session. This analysis helps in adjusting the difficulty level and improving the question set for future games.
 
+### Getting Started
+Sure, let's incorporate the thematic focus on the army into the project overview and detail the specifics of gameplay, particularly how incorrect answers are handled and how end-game notifications are distributed. Here's how you might update the README:
+
+## Gameplay Details
+
+### Joining the Game
+- **Units and Battalions**: Upon connection, each player is assigned a unit and battalion name. Bots receive a random military commander's name.
+- **Question Handling**: Players answer trivia questions related to military history and tactics.
+
+### Rules and Scoring
+- **Disqualification for Incorrect Answers**: Players who answer incorrectly are disqualified from further participation in the current game but remain connected.
+- **Broadcast of Results**: At the game's end, a broadcast message is sent to all participants, announcing the winner and summarizing the game results.
+
+## Getting Started
+
+### Installation
+Clone the repository:
+git clone [URL of your repository]
+cd [repository name]
+
+### Running the Server
+python server.py
+
+### Running the Client
+python client.py
+
+### Running the Bot Client
+python Bot.py
+
+### How to Play
+
+- **Question Format**: All trivia questions are true/false questions. Players answer by inputting their responses.
+- **Answering Questions**: Players respond to questions using the following inputs:
+  - `y`, `t`, `1` for "True"
+  - `n`, `f`, `0` for "False"
+- **Scoring and Disqualification**: Points are awarded for correct answers. Players who answer a question incorrectly are disqualified from further participation in the current game but remain connected to receive the game summary.
+- **End of Game**: Once all questions have been answered, or all players are disqualified, the server broadcasts the game results to all participants, announcing who answered the fastest and which question was the hardest.
+
+
+
+
