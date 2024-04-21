@@ -16,6 +16,14 @@ This Trivia Game is a networked quiz game centered around military themes, imple
 - **UDP Broadcast**: At first, the server broadcasts a message via UDP to all clients on the same network, inviting them to join the game, in addition we will not close the connection because if there is a client who wants to enter during a game we will not be "lost" and so he can join after the current game will be finished.
 - **TCP Connections**: Once clients respond to the UDP broadcast, a TCP connection is established for each client to handle the game's interactive session securely and reliably.
 
+### Multithreading
+**Thread Per Client**: Each client connection is managed by a dedicated thread. This design ensures that client-specific tasks such as receiving answers, timing responses, and sending questions are handled independently, thus avoiding any performance bottlenecks that would arise from a single-threaded server architecture.
+  
+- **Concurrency Control**: To manage the complexities introduced by multiple threads, the server implements synchronization mechanisms. These include locks and thread-safe data structures to prevent race conditions, especially when accessing shared resources like game state information and player scores.
+
+- **Efficient Resource Management**: Threads are carefully managed to ensure that system resources are utilized optimally. The server dynamically creates threads as clients connect and properly closes these threads when clients disconnect, ensuring efficient resource management and preventing resource leaks.
+
+
 ### Concurrency and Thread Safety
 Threads manage client connections, with synchronization mechanisms in place to avoid data races and ensure consistency.
 
